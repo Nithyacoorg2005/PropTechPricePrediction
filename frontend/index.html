@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seattle Property Price Predictor</title>
+    <link rel="stylesheet" href="style.v3.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>Seattle Property Price Predictor</h1>
+        <p class="subtitle">
+          Machine-learning based residential price estimation for Seattle
+        </p>
+      </header>
+
+      <section class="card">
+        <form id="predict-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Seattle Neighborhood</label>
+              <select id="area" required>
+                <option value="">Select an area</option>
+                <option value="downtown">Downtown Seattle</option>
+                <option value="capitol_hill">Capitol Hill</option>
+                <option value="ballard">Ballard</option>
+                <option value="fremont">Fremont</option>
+                <option value="queen_anne">Queen Anne</option>
+                <option value="bellevue">Bellevue</option>
+                <option value="redmond">Redmond</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Living Area (sqft)</label>
+              <input type="number" id="sqft" placeholder="Eg: 1800" required />
+            </div>
+
+            <div class="form-group">
+              <label>Bedrooms</label>
+              <input type="number" id="bedrooms" placeholder="Eg: 3" required />
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary">Predict Price</button>
+        </form>
+      </section>
+
+      <section class="card result-card">
+        <h2>Prediction Result</h2>
+        <pre id="result">Select a Seattle area to get a prediction.</pre>
+      </section>
+
+      <section class="card">
+        <h2>Prediction Insights</h2>
+
+        <div class="kpi-grid">
+          <div class="kpi">
+            <span>Estimated Property Value (Sale Price)</span>
+            <strong id="kpi-price">$0</strong>
+          </div>
+          <div class="kpi">
+            <span>Distance to Center</span>
+            <strong id="kpi-distance">0 km</strong>
+          </div>
+          <div class="kpi">
+            <span>Area</span>
+            <strong id="kpi-area">—</strong>
+          </div>
+        </div>
+
+       <div class="chart-grid">
+  <div class="chart-box">
+    <canvas id="priceDonut"></canvas>
+  </div>
+  <div class="chart-box">
+    <canvas id="areaCompareChart"></canvas>
+  </div>
+</div>
+
+      </section>
+
+      <footer>
+        <p>Seattle · FastAPI · Machine Learning · PropTech</p>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
