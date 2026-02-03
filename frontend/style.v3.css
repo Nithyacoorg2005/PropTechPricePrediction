@@ -1,0 +1,229 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Parkinsans:wght@300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border: #e5e7eb;
+  --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  
+}
+
+/* ===============================
+   RESET
+================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "outfit";
+}
+
+/* ===============================
+   PAGE BASE
+================================ */
+body {
+  background: linear-gradient(180deg, #f7f9fc, #eef2f7);
+  color: var(--text-main);
+  min-height: 100vh;
+}
+
+/* ===============================
+   CONTAINER (FIXED)
+================================ */
+.container {
+  max-width: 1100px;
+  margin: 48px auto;
+  padding: 0 20px;
+}
+
+/* ===============================
+   HEADER
+================================ */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+
+.subtitle {
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* ===============================
+   CARDS
+================================ */
+.card {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow);
+}
+
+/* ===============================
+   FORM
+================================ */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text-muted);
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: #f9fafb;
+  font-size: 0.95rem;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  background: #fff;
+}
+
+/* ===============================
+   BUTTON
+================================ */
+.btn-primary {
+  margin-top: 24px;
+  margin-left:400px;
+  width: 20%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.35);
+}
+
+/* ===============================
+   RESULT
+================================ */
+.result-card h2 {
+  margin-bottom: 12px;
+}
+
+#result {
+  background: #f9fafb;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+}
+
+/* ===============================
+   KPI SECTION
+================================ */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.kpi {
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.kpi span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.kpi strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+/* ===============================
+   CHART LAYOUT (FIXED)
+================================ */
+.chart-box {
+  height: 320px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart-box canvas {
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+/* Donut specific */
+#priceDonut {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+
+/* ===============================
+   FOOTER
+================================ */
+footer {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #priceDonut {
+    max-width: 240px;
+  }
+}
